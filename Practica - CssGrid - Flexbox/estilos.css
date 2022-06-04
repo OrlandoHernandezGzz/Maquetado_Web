@@ -8,6 +8,9 @@ body {
 	background: #1D202B;
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .contenedor {
@@ -16,7 +19,14 @@ body {
 	margin: auto;
 	padding: 40px 0;
 
+	/* FLEXBOX */
+	/* display: flex;
+	gap: 20px; */
 	
+	/* CSS GRID */
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 20px;
 }
 
 .titulo {
@@ -25,7 +35,17 @@ body {
 }
 
 .contenedor-conciertos {
-	
+	/* FLEXBOX */
+	/* width: 70%;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px; */
+
+	/* CSS GRID */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
 }
 
 .card {
@@ -38,13 +58,21 @@ body {
 	background-size: cover;
 	background-position: center center;
 
-	
+	/* FLEXBOX */
+	/* width: calc(33.33% - 20px); */
 }
 
 .card .textos {
 	height: 100%;
 	
-	
+	/* FLEXBOX */
+	/* display: flex;
+	flex-direction: column;
+	justify-content: space-between; */
+
+	/* CSS GRID */
+	display: grid;
+	grid-template-rows: 1fr auto;
 }
 
 .banner {
@@ -54,7 +82,16 @@ body {
 	background-size: cover;
 	background-position: center center;
 
+	/* FLEXBOX */
+	/* width: 30%;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; 
 
+	/* CSS GRID */
+	/* display: grid;
+	grid-template-rows: auto auto auto;
+	align-items: center; */
 }
 
 .banner ul {
@@ -81,13 +118,46 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-	
+	.contenedor-conciertos {	
+		/* CSS GRID */
+		display: grid;
+		grid-template-columns:  repeat(2, 1fr);
+		gap: 20px;
+	}
+
+	.contenedor {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
 }
 
 @media screen and (max-width: 700px) {
-	
+	.contenedor-conciertos {	
+		/* CSS GRID */
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.contenedor {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
 }
 
 @media screen and (max-width: 600px) {
+	.contenedor-conciertos {	
+		/* CSS GRID */
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
 
+	.contenedor {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
 }
